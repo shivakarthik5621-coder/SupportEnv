@@ -10,11 +10,25 @@ tasks:
     difficulty: easy
     description: "Order status check — look up the order, find tracking info, and respond with status"
     max_steps: 10
+    grader:
+      type: programmatic
+      module: server.graders
+      class: TaskGrader
+
   - name: complaint_resolution
     difficulty: medium
     description: "Wrong item complaint with refund — investigate order and history, issue refund, compose empathetic response"
     max_steps: 15
+    grader:
+      type: programmatic
+      module: server.graders
+      class: TaskGrader
+
   - name: complex_escalation
     difficulty: hard
     description: "Multi-issue resolution — investigate 3 problems (damaged item, duplicate charge, password reset), take appropriate actions, and compose comprehensive response"
     max_steps: 25
+    grader:
+      type: programmatic
+      module: server.graders
+      class: TaskGrader
