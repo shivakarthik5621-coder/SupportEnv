@@ -59,7 +59,7 @@ class TaskGrader:
             + response_score * 0.40
             + efficiency_score * 0.20
         )
-        final_score = max(0.0, min(1.0, raw_score - penalty))
+        final_score = max(0.01, min(0.99, raw_score - penalty))
 
         return {
             "score": round(final_score, 4),
@@ -90,7 +90,7 @@ class TaskGrader:
 
         # 50/50 weight for progress (efficiency not counted here)
         progress = action_score * 0.5 + response_score * 0.5
-        return round(min(1.0, max(0.0, progress)), 4)
+        return round(min(0.99, max(0.01, progress)), 4)
 
     # -------------------------------------------------------------------
     # Action grading
